@@ -64,14 +64,14 @@ public class Input {
             setGender();
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
-            System.out.println(e + ": No such enum constant.\n");
+            System.out.println(e + ": No such enum constant. GENDER will be equal null.\n");
         }
 
         try {
             setID();
         } catch (InputMismatchException e) {
             e.printStackTrace();
-            System.out.println(e + ": Input ID isn't integer.\n");
+            System.out.println(e + ": Input ID isn't integer. ID will be equal 0.\n");
         }
         return new Student(getName(), getLastName(), getGender(), getID(), group.getGroupName());
     }
