@@ -42,7 +42,7 @@ public class Input {
         if (gen.equals("M") || gen.equals("F")) {
             this.gender = Gender.valueOf(gen);
         } else {
-            throw new IllegalArgumentException("Input issue. No such enum constant.");
+            throw new IllegalArgumentException();
         }
     }
 
@@ -57,6 +57,22 @@ public class Input {
     }
 
     public Student createStudent(Group group) {
+        setName();
+        setLastName();
+
+        try {
+            setGender();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            System.out.println(e + ": No such enum constant.\n");
+        }
+
+        try {
+            setID();
+        } catch (InputMismatchException e) {
+            e.printStackTrace();
+            System.out.println(e + ": Input ID isn't integer.\n");
+        }
         return new Student(getName(), getLastName(), getGender(), getID(), group.getGroupName());
     }
 
