@@ -1,13 +1,14 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Input {
+public class InputStudent {
     private String name;
     private String lastName;
     private Gender gender;
     private int ID;
+    private Scanner sc = new Scanner(System.in);
 
-    public Input() {
+    public InputStudent() {
     }
 
     public String getName() {
@@ -16,7 +17,6 @@ public class Input {
 
     public void setName() {
         System.out.println("Name : ");
-        Scanner sc = new Scanner(System.in);
         this.name = sc.next();
     }
 
@@ -26,7 +26,6 @@ public class Input {
 
     public void setLastName() {
         System.out.println("Lastname: ");
-        Scanner sc = new Scanner(System.in);
         this.lastName = sc.next();
     }
 
@@ -36,7 +35,6 @@ public class Input {
 
     public void setGender() throws IllegalArgumentException {
         System.out.println("Gender M/F: ");
-        Scanner sc = new Scanner(System.in);
         String gen = sc.next().toUpperCase();
 
         if (gen.equals("M") || gen.equals("F")) {
@@ -52,7 +50,6 @@ public class Input {
 
     public void setID() throws InputMismatchException {
         System.out.println("ID: ");
-        Scanner sc = new Scanner(System.in);
         this.ID = sc.nextInt();
     }
 

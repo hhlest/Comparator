@@ -4,9 +4,9 @@ public class Main {
 
         Group g1 = new Group("101");
 
-        Input input = new Input();
+        InputStudent inputStudent = new InputStudent();
 
-        Student s4 = input.createStudent(g1);
+        Student s4 = inputStudent.createStudent(g1);
 
         try {
             g1.addStudent(s4);
